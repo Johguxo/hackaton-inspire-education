@@ -1,0 +1,1 @@
+web: gunicorn hackatoneduperu.wsgi --log-file -

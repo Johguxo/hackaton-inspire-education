@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Test Inicial</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href="{% static 'css/test_initial.css' %}">
+    <script src='main.js'></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
+        integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
+        crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300|Poppins:300" rel="stylesheet">
+
+</head>
+
+<body>
+    <div id="container">
+        <div id="title-head">
+            <h1 style="font-size:70px">Sombrero magico</h1>
+            <p>Este test te ayudara a ver a que escuela perteneces.</p>
+        </div>
+        <div id="results">
+            <form name="quizForm" onsubmit="submitAnswers()">
+                {% for question in questions %}
+                    <h4>{{question.title}}</h4>
+                    <h3>{{ question.description }}</h3>
+                    {% for alternative in question.alternatives %}
+                    <p><input type="radio" name="q2" value="d" id="q2d">{{alternative}}</p>
+                    {% endfor %}
+                {% endfor %}
+                <!--<h3>Question 1. In which HTML tag do we put JavaScript code?</h3>
+                <input type="radio" name="q1" value="a" id="q1a">a. &lt;html&gt;</input>
+                <p><input type="radio" name="q1" value="b" id="q1b">b. &lt;script&gt;</input></p>
+                <p><input type="radio" name="q1" value="c" id="q1c">c. &lt;h1&gt;</input></p>
+                <p><input type="radio" name="q1" value="d" id="q1d">d. &lt;link&gt;</input></p>
+
+                <h3>Question 2. What is a For Loop?</h3>
+                <input type="radio" name="q2" value="a" id="q2a">a. Function to debug a JavaScript file.</input>
+                <p><input type="radio" name="q2" value="b" id="q2b">b. For Loops are rarely used in JavaScript, and
+                    thus unnecessary knowledge.</input></p>
+                <p><input type="radio" name="q2" value="c" id="q2c">c. Control flow statement for specifying
+                    iteration, which allows code to be executed repeatedly.</input></p>
+                <p><input type="radio" name="q2" value="d" id="q2d">d. For Loops run a function one time and return
+                    a given input.</p>
+
+                <h3>Question 3. What is one way to define an array?</h3>
+                <input type="radio" name="q3" value="a" id="q3a">a. new Array;</input>
+                <p><input type="radio" name="q3" value="b" id="q3b">b. var arr = [];</input></p>
+                <p><input type="radio" name="q3" value="c" id="q3c">c. array1 = {};</input></p>
+                <p><input type="radio" name="q3" value="d" id="q3d">d. arr array1 = [];</input></p>
+
+                <h3>Question 4. How do I call the function "addUp(a,b)"?</h3>
+                <input type="radio" name="q4" value="a" id="q4a">a. addUp(3,7);</input>
+                <p><input type="radio" name="q4" value="b" id="q4b">b. call addUp(3,7)</input></p>
+                <p><input type="radio" name="q4" value="c" id="q4c">c. addUp(a,b) = 3,7</input></p>
+                <p><input type="radio" name="q4" value="d" id="q4d">d. addUp(a,b) = (3,7)</input></p>
+
+                <h3>Question 5. What does JSON stand for?</h3>
+                <input type="radio" name="q5" value="a" id="q5a">a. JavaScript Order Nullifier</input>
+                <p><input type="radio" name="q5" value="b" id="q5b">b. JavaScript Outer Nodes</input></p>
+                <p><input type="radio" name="q5" value="c" id="q5c">c. JavaScript Orientation Notes</input></p>
+                <p><input type="radio" name="q5" value="d" id="q5d">d. JavaScript Object Notation</input></p>
+                -->
+                <button type="button" class="btn btn-default">Submit Answers</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
